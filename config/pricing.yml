@@ -1,0 +1,26 @@
+common: &common
+  storage: 0.15
+  data_transfer: &data_transfer
+    in: 0.1
+    out: 0.17
+  request: &request
+    tier1:
+      count: 1000
+      price: 0.01
+    tier2: 
+      count: 10000
+      price: 0.01   
+
+pricing:
+  us:
+    <<: *common
+  eu:
+    <<: *common
+    storage: 0.18
+    request:
+      tier1:
+        count: 1000
+        price: 0.012
+      tier2: 
+        count: 10000
+        price: 0.012   

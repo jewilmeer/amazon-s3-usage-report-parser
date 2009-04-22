@@ -1,0 +1,26 @@
+This script allows you to view costs of amazon s3 seperated by bucket.
+
+required stept to generate reports:
+- Run 'run.rb' or 'run.rb production' for output less run
+
+Example output:
+==================================================
+[BUCKET NAME]
+--------------------------------------------------
+SUMMARY
+--------------------------------------------------
+Date Range: 01 Feb 2009 -> 01 Apr 2009
+Storage   : 5 bytes
+Traffic   : 8 bytes
+Requests  : 4 360 661 925
+Total     : $1,342.98
+==================================================
+
+==================================================
+TOTALS
+--------------------------------------------------
+Data traffic: 12 TB
+Data storage: 17 GB
+Requests    : 13 Trillion
+Costs       : $2,357.63
+==================================================

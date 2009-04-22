@@ -1,0 +1,7 @@
+log/*.log
+!public/reports/.gitignore
+!public/reports/csv/.gitignore
+!public/reports/txt/.gitignore
+!public/reports/xml/.gitignore
+.DS_Store
+*/.DS_Store
