@@ -25,6 +25,11 @@ class Application
     f.write(report.generate('xml'))
     f.close
     Logger.info "Saved xml"
+    
+    email = APP_ENV == 'development' ? 'jan-willem@mediamonks.com' : AppConfig.user['receiver']
+    Logger.info "sending email to: #{email}"
+    self.send_mail email, 'Amazon usage report', report.generate('txt')
+    
   end
 
   # place shared application methods here
@@ -60,5 +65,15 @@ class Application
         "#{value / 1024**4} TB"
       end
     end
+  end
+  
+  def send_mail(to, subject, content)
+    mail         = SimpleMail.new
+    mail.from    = 'MM Report Mailer <root@mediamonks.com>'
+    mail.to      = to
+    mail.subject = subject
+    mail.text    = content
+    # mail.html    = content 
+    mail.send
   end
 end

@@ -1,6 +1,7 @@
 This script allows you to view costs of amazon s3 seperated by bucket.
 
 required stept to generate reports:
+- Install the following gems: mechanize, extensions, builder, logger, ostruct, time, csv
 - Run 'run.rb' or 'run.rb production' for output less run
 
 Example output:

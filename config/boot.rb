@@ -1,12 +1,16 @@
 unless defined?(APP_ROOT)
-  puts ENV.inspect
   APP_ROOT = File.expand_path(File.join( File.dirname(__FILE__), '..'))
+
+  ENV['GEM_HOME'] = ''
+  ENV['GEM_PATH'] = ''
 
   # handle environments
   APP_ENV = ARGV[0] || 'development'
 
   # 3th party spullen
-  %w[rubygems extensions/all csv yaml ostruct time mechanize builder].each {|r| require r}
+  %w[rubygems csv yaml ostruct time builder mechanize extensions/all logging].each {|r| require r}
+  # lib dir includes
+  Dir.glob(APP_ROOT + '/lib/*.rb').each {|f| require f}
   # own classes
   Dir.glob(APP_ROOT + '/app/**/*.rb').each {|f| require f}
   
@@ -20,7 +24,6 @@ unless defined?(APP_ROOT)
   end
   
   # log configuration
-  require 'logging'
   Logging.init :debug, :info, :warn, :error, :fatal
 
   layout = Logging::Layouts::Pattern.new :pattern => "[%d] [%-5l] %m\n"

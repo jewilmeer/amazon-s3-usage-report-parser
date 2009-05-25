@@ -5,6 +5,7 @@ paths:
 user:
   login: youremail@amazon.com
   password: password
+  receiver: email@domain.com
 links:
   usage_report: https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=usage-report
   download_report: http://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&timePeriod=Previous&billing&period&operation=ALL&productCode=AmazonS3&periodType=months&usageType=ALL&action=usage-report&download-usage-report-csv.x=103&download-usage-report-csv.y=5
